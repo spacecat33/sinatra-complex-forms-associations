@@ -2,7 +2,7 @@
 <h4>Pets:</h4>
 <ul>
   <% @owner.pets.each do |pet|%>
-  <li><a href="/pets/<%= pet.id %>"><%=pet.name%></a></li>
+  <li><a href="/pets/<%=pet.id%>"><%=pet.name%></a></li>
   <%end%>
 </ul>
 
