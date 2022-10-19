@@ -1,6 +1,16 @@
 <h1><%=@pet.name%></h1>
 <h4>Owner:</h4>
-<ul>
-  <li><%=@pet.owner.name%></li>
-</ul>
+<ul><ul>
 
+  <li> <% if !@pet.owner.name %>
+  <%= No Owner currently %>
+else
+    <%= @pet.owner.name %> </li>
+  <% end %>
+
+
+<br><br>
+<form method="POST" action="/pets/<%=@pet.id%>">
+    <input type="hidden" name="_method" value="DELETE"/>
+    <input type="submit" value="Delete this pets page"/>
+</form>

@@ -6,3 +6,8 @@
   <%end%>
 </ul>
 
+<br><br>
+<form method="POST" action="/owners/<%=@owner.id%>">
+    <input type="hidden" name="_method" value="DELETE"/>
+    <input type="submit" value="Delete this owners page"/>
+</form>
