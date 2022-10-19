@@ -47,4 +47,11 @@ class PetsController < ApplicationController
 
     redirect to "pets/#{@pet.id}"
   end
+
+  delete '/pets/:id' do
+    @pet = Pet.find_by_id(params[:id])
+    @pet.delete
+
+    redirect '/pets' 
+  end
 end

@@ -42,6 +42,17 @@ class OwnersController < ApplicationController
       end
       redirect "owners/#{@owner.id}"
   end
+
+  delete '/owners/:id' do
+    @owner = Owner.find_by(id:
+      params[:id], pet_id:
+      params[:pet_id]
+    )
+    @owner.pets.destroy
+    @owner.delete
+
+    redirect '/owners' 
+  end
 end
 
 ## NOTE: The bug fix is required so that it's possible to remove ALL previous pets from owner.
