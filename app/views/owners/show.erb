@@ -2,7 +2,7 @@
 <h4>Pets:</h4>
 
 
-<%if @owner.pets.empty?%>
+<%if @owner.pets.empty?%>   <%##this works because in model, owner has many pets hence, the PETS array could be empty.%>
   <%="None. This owner has no pets"%>
   <%else%>
   <ul>
