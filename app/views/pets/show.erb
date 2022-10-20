@@ -5,7 +5,7 @@
   <li> 
     <%= 
   
-if @pet.owner == nil
+if @pet.owner == nil  
     "This Pet is Ownerless"
 else 
     @pet.owner.name
@@ -28,3 +28,5 @@ end
 <br><br>
 <a href="/owners"> See list of Owners </a>
 </div>
+
+<% ##the 'if' method above works because a Pet belongs to an owner so the Pet object would output nil if doesnt have an owner. %>
