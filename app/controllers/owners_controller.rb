@@ -17,6 +17,8 @@ class OwnersController < ApplicationController
     end
     redirect "owners/#{@owner.id}"
   end
+  # NOTE: When using the shovel operator, ActiveRecord instantly fires update SQL without 
+  # waiting for the save or update call on the parent object, unless the parent object is a new record.
 
   get '/owners/:id/edit' do 
     @owner = Owner.find(params[:id])

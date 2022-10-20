@@ -1,13 +1,26 @@
 <h1><%=@owner.name%></h1>
 <h4>Pets:</h4>
-<ul>
+
+
+<%if @owner.pets.empty?%>
+  <%="None. This owner has no pets"%>
+  <%else%>
+  <ul>
   <% @owner.pets.each do |pet|%>
   <li><a href="/pets/<%=pet.id%>"><%=pet.name%></a></li>
-  <%end%>
+  <%end%>   
+  <%end%> 
 </ul>
+
+
+<br><br><br><br>
+<a href="/owners/<%=@owner.id%>/edit"> Edit this Owner's details </a>
 
 <br><br>
 <form method="POST" action="/owners/<%=@owner.id%>">
     <input type="hidden" name="_method" value="DELETE"/>
     <input type="submit" value="Delete this owners page"/>
 </form>
+
+<br><br><br>
+<a href="/owners"> Go back to List of Owners </a>

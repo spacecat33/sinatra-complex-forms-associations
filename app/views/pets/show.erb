@@ -13,15 +13,18 @@ end
 %> </li>
 </ul>
 <br>
+
 <form method="POST" action="/pets/<%=@pet.id%>">
     <input type="hidden" name="_method" value="DELETE"/>
     <input type="submit" value="Delete this pets page"/>
 </form>
 
+<br>
+<a href="/pets/<%=@pet.id%>/edit"> Edit this pet's details </a>
 
 <br><br>
 <div>
-<a href="/owners"> Go back to list of Owners </a>
+<a href="/pets"> See list of Existing Pets </a>
 <br><br>
-<a href="/pets"> Or see list of Existing Pets </a>
+<a href="/owners"> See list of Owners </a>
 </div>
